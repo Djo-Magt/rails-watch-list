@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :bookmarks, only: %I[create new]
   end
   resources :bookmarks, only: %I[destroy]
+  resources :lists, only: %I[destroy]
 end
