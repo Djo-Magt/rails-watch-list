@@ -1,16 +1,19 @@
+
+<div class="container">
+
   <div class="card-category card-large">
     <h1><%= @list.name %></h1>
   </div>
 
     <button class="btn-ace mt-3">
-      <%= link_to "Ajouter un film", new_list_path, style: "color: blue"  %>
+      <%= link_to "Ajouter un film", new_list_bookmark_path(@list), style: "color: blue"  %>
     </button>
 
   <div class="row my-2">
     <% @list.movies.each do |movie| %>
-      <div class="col-12 col-sm-6 mb-4">
+      <div class="col-6 col-md-3 mb-4" >
         <div class="bg-white rounded shadow h-100">
-          <%= image_tag movie.poster_url, alt: movie.title, class: "movie-img rounded-top" %>
+          <%= image_tag movie.poster_url, alt: movie.title, class: "img-fluid" %>
           <div class="p-3 rounded-bottom d-flex flex-column">
             <strong><%= movie.title %> <span class="text-muted font-weight-normal">• <%= movie.rating %> <i class="fas fa-star star-yellow"></i></span></strong>
             <small class="text-muted"><%= movie.overview %></small>
@@ -19,3 +22,5 @@
       </div>
     <% end %>
   </div>
+
+</div>
